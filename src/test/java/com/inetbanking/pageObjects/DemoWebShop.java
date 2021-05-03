@@ -62,13 +62,7 @@ WebDriver ldriver;
 
 	
 	
-	@FindBy(how = How.ID, using ="small-searchterms")
-	@CacheLookup
-	WebElement SearchBox;
-	
-	public void SearchBox(String Text){
-     	SearchBox.sendKeys(Text);
-	}
+	//input[@value = "Log in"]
 	
 	
 	
