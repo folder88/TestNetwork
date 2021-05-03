@@ -65,5 +65,30 @@ WebDriver ldriver;
 	}
 	
 	
+	@FindBy(how = How.XPATH, using ="//li[text()=\"No customer account found\"]")
+	@CacheLookup
+	WebElement Text_error_02;
+	
+	
+	public void Text_error_02(){
+		String text = Text_error_02.getText();
+		System.out.println(text);
+		
+		
+	}
+	
+	
+	@FindBy(how = How.XPATH, using ="//span[text()=\"Please enter a valid email address.\"]")
+	@CacheLookup
+	WebElement Text_error_03;
+	
+	
+	public void Text_error_03(){
+		String text = Text_error_03.getText();
+		System.out.println(text);
+		
+		
+	}
+	
 	
 }
