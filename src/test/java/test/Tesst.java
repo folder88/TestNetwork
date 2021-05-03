@@ -1,5 +1,6 @@
 package test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -39,14 +40,20 @@ public class Tesst extends BaseClass{
 		    System.out.println(t);
 		    //WebElement z = driver.findElement(By.xpath("//body/div[@id='overall']/div[@id='content']/main[1]/div[1]/form[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]"));
 		    
-		    String id = "//*[@id=\"abschluss_form\"]/div[3]/button[1]";
-		    WebElement m = driver.findElement(By.xpath(id));
+		    //String ClassName = "big nowrap";
+		    List<WebElement> f = driver.findElements(By.xpath("//form[@id=\"abtschluss_form\"]//span[@xpath=\"10\"]"));
+		   System.out.println(f);
+		    //int slidesize = driver.findElements(By.className(ClassName)).size();
+		    //System.out.println(slidesize);
+		    
+		    //int s = driver.findElements(By.linkText("Weiter zu Ihrem Ergebnis")).size();
+		    //System.out.println(s);
 		  //*[@id="abschluss_form"]/div[3]/button[1]
 		   // WebElement n = driver.findElement(By.className("powermail_field powermail_submit"));
-		    System.out.println(m);
+		    //System.out.println(m);
 		    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-		    String s = m.getTagName();
-		    System.out.println(s);
+		    //String s = m.getTagName();
+		   //System.out.println(s);
 		    //m.click();
 		 
 	 

@@ -26,6 +26,10 @@ public class AddCustomerPage {
 	@CacheLookup
 	WebElement cookies;
 	
+	@FindBy(how = How.CLASS_NAME, using ="button-1 search-box-button")
+	@CacheLookup
+	WebElement SearchButton;
+	
 	@FindBy(how = How.XPATH, using ="//*[@id=\"nav_sub\"]/ul/li[1]/a")
 	@CacheLookup
 	WebElement pensionVermögen;

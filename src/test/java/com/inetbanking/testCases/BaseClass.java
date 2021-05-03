@@ -15,6 +15,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
@@ -58,14 +59,14 @@ public class BaseClass {
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
 			driver = new FirefoxDriver(); 
 		}
-		else if (br.equals("ie")) {
-			System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"//Drivers//IEDriverServer.exe");
-			driver = new InternetExplorerDriver(); 
+		else if (br.equals("edge")) {
+			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Drivers//msedgedriver.exe");
+			driver = new EdgeDriver(); 
 		}
 		System.out.println(baseURL);
 		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		Thread.sleep(3000);
-		driver.get("https://www.wienerstaedtische.at/privatkunden.html");
+		driver.get("http://demowebshop.tricentis.com/");
 	
 	}
 	

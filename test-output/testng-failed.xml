@@ -5,15 +5,15 @@
     <listener class-name="com.inetbanking.utilities.Reporting"/>
   </listeners>
   <test thread-count="5" name="BankingApp Test2(failed)">
-    <parameter name="browser" value="firefox"/>
+    <parameter name="browser" value="edge"/>
     <classes>
-      <class name="test.Tesst">
+      <class name="com.inetbanking.testCases.Test_Case_01">
         <methods>
+          <include name="method"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="testCase02"/>
         </methods>
-      </class> <!-- test.Tesst -->
+      </class> <!-- com.inetbanking.testCases.Test_Case_01 -->
     </classes>
   </test> <!-- BankingApp Test2(failed) -->
 </suite> <!-- Failed suite [InetBankingV1] -->
