@@ -57,10 +57,9 @@ WebDriver ldriver;
 	WebElement Text_error_01;
 	
 	
-	public void Text_error_01(){
-		String text = Text_error_01.getText();
-		System.out.println(text);
-		
+	public  String  Text_error_01(){
+		return  Text_error_01.getText();
+	
 		
 	}
 	
@@ -70,9 +69,9 @@ WebDriver ldriver;
 	WebElement Text_error_02;
 	
 	
-	public void Text_error_02(){
+	public String Text_error_02(){
 		String text = Text_error_02.getText();
-		System.out.println(text);
+		return text;
 		
 		
 	}

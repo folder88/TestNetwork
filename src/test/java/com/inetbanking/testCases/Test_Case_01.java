@@ -1,5 +1,7 @@
 package com.inetbanking.testCases;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 import com.inetbanking.pageObjects.DemoWebShop;
@@ -11,9 +13,11 @@ import junit.framework.Assert;
 public class Test_Case_01 extends BaseClass{
 
 	
-	public String username = "corneliugurin@gmail.test";
+	public String username = "ccorneliugurin@gmail.test";
 	public String password = "lenroc88";
-	
+	public String error_01 = "Login was unsuccessful. Please correct the errors and try again.";
+	public String error_02 = "No customer account found";
+	public String erroe_03 = "Please enter a valid email address.";
 	
 	
 	
@@ -32,7 +36,6 @@ public class Test_Case_01 extends BaseClass{
 		Thread.sleep(2000);
 		demowebshow.Login_Button();
 		Thread.sleep(2000);
-		
 		
 		
 		
@@ -59,25 +62,27 @@ public class Test_Case_01 extends BaseClass{
 		else if(username !="corneliugurin@gmail.test" || password != "lenroc88")
 		
 		{
+			
+			
 			Logger.info("Username and Password are incorrect");
-			driver.navigate().back();
-			Assert.assertTrue(false);
+			Thread.sleep(2000);
+			Login_Page.Email(username);
+			Thread.sleep(2000);
+            Login_Page.Password(password);
+            Thread.sleep(2000);
+			Login_Page.Login();
+			//String text = Login_Page.Text_error_01();
+			assertEquals(error_01, Login_Page.Text_error_01());
+			assertEquals(error_02, Login_Page.Text_error_02());
+			
+			
+			//driver.navigate().back();
+			//Assert.assertTrue(false);
 		}
 		
 		
 		
-		Login_Page.Email("corne5liugurin@gmail.test");
-		Login_Page.Password("lenroc88");
-		
-		Login_Page.Login();
-		
-		Login_Page.Text_error_01();
-		Login_Page.Text_error_02();
-		
-		
-		Thread.sleep(2000);
-		driver.navigate().back();
-		Thread.sleep(2000);
+	
 	
 		
 		driver.quit();
