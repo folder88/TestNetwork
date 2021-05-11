@@ -88,7 +88,7 @@ public class By_computer_test extends BaseClass{
 		x.click();
 		Logger.info("Pass Shipping Adress");
 		Thread.sleep(2000);
-		
+		System.out.println("commitment");
 		driver.findElement(By.xpath("//*[@id=\"shipping-method-buttons-container\"]/input")).click();
 		Logger.info(" Pass Shipping Method");
 		Thread.sleep(2000);
