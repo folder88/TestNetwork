@@ -21,8 +21,9 @@
        <!-- <class name = "com.inetbanking.testCases.TC_AddCustomerTest_003"/>-->
       <!-- <class name = "test.Tesst"/>-->
       
-      <class name = "com.inetbanking.testCases.Test_Case_01"/>
-      
+    <!--<class name = "com.inetbanking.testCases.Test_Case_01"/>-->
+      <class name = "com.inetbanking.testCases.By_computer_test"/>
+     <!--<class name = "com.inetbanking.testCases.Test_Class"/>-->
       
       
       

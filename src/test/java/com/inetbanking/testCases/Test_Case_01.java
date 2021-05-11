@@ -20,9 +20,8 @@ public class Test_Case_01 extends BaseClass{
 	public String erroe_03 = "Please enter a valid email address.";
 	
 	
-	
-	@Test
-	public void method() throws InterruptedException{
+	@Test(dataProvider="LoginData")
+	public void method(String user,String pwd) throws InterruptedException{
 		
 		
 		
