@@ -1,6 +1,7 @@
 package com.inetbanking.testCases;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -44,35 +45,36 @@ public class By_computer_test extends BaseClass{
 		Baying_Process by = new Baying_Process(driver);
 		
 		
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		demowebshow.Login_Button();
-		Thread.sleep(2000);
+		
 		Logger.info("Username and Password are correct");
-		Thread.sleep(2000);
+		
 		Login_Page.Email("corneliugurin@gmail.test");
-		Thread.sleep(2000);
+		
         Login_Page.Password("lenroc88");
-        Thread.sleep(2000);
+        
 		Login_Page.Login();
-		Thread.sleep(2000);
+		
 		Logger.info("Login was succesful");
 		demowebshow.COMPUTERS();
 		driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[1]/div[1]/div/div/a/img")).click();
 		Logger.info("Acces Deskop Computer succesfully");
-		Thread.sleep(5000);
+		
 		driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div[2]/h2/a")).click();
 		Logger.info("Acces cheap Computer succesfully");
-		Thread.sleep(5000);
+		
 		driver.findElement(By.id(pc)).click();
 		
-		Thread.sleep(3000);
+		
 		driver.findElement(By.id(memory)).click();
-		Thread.sleep(3000);
 		
 		
-		Thread.sleep(3000);
+		
+		
 		driver.findElement(By.id(HardDrive)).click();
-		Thread.sleep(3000);
+		
 		
 		
 		
