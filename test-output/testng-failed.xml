@@ -11,7 +11,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="folder" invocation-numbers="1 2"/>
+          <include name="folder" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- com.inetbanking.testCases.By_computer_test -->
     </classes>

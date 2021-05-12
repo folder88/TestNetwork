@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.inetbanking.pageObjects.Baying_Process;
 import com.inetbanking.pageObjects.DemoWebShop;
 import com.inetbanking.pageObjects.Login_Page;
 
@@ -30,8 +31,8 @@ public class By_computer_test extends BaseClass{
 	
 	
 	
-	
-	
+	public static String Ground = "Ground";
+	public static String Cash_on_delivery="Cash_on_delivery";
 	
 	
 	
@@ -40,6 +41,7 @@ public class By_computer_test extends BaseClass{
 		
 		DemoWebShop demowebshow = new DemoWebShop(driver);
 		Login_Page Login_Page = new Login_Page(driver);
+		Baying_Process by = new Baying_Process(driver);
 		
 		
 		Thread.sleep(2000);
@@ -77,46 +79,26 @@ public class By_computer_test extends BaseClass{
 		driver.findElement(By.id("add-to-cart-button-72")).click();
 		
 		
+		
+		
+		
+		
+		
 		driver.findElement(By.className("cart-label")).click();
 		Logger.info("Acces shopping card");
 		driver.findElement(By.id("termsofservice")).click();
 		driver.findElement(By.id("checkout")).click();
-		driver.findElement(By.xpath("//input[@title = \"Continue\"]")).click();
-		Logger.info("First Click");
-		Thread.sleep(5000);
-		WebElement x = driver.findElement(By.xpath("//*[@id=\"shipping-buttons-container\"]/input"));
-		x.click();
-		Logger.info("Pass Shipping Adress");
-		Thread.sleep(2000);
-		System.out.println("commitment");
-		driver.findElement(By.xpath("//*[@id=\"shipping-method-buttons-container\"]/input")).click();
-		Logger.info(" Pass Shipping Method");
-		Thread.sleep(2000);
-		driver.findElement(By.id("paymentmethod_2")).click();
-		Logger.info(" Insert Credit Card");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"payment-method-buttons-container\"]/input")).click();
-		Logger.info("  Pass Payment Method");
-		Thread.sleep(2000);
-		driver.findElement(By.id("ExpireMonth")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"ExpireMonth\"]/option[4]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("ExpireYear")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"ExpireYear\"]/option[2]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("CardholderName")).sendKeys("Barbara Gordon");
-		Thread.sleep(2000);
-		driver.findElement(By.id("CardCode")).sendKeys("123");
-		Thread.sleep(2000);
-		driver.findElement(By.id("CardNumber")).sendKeys("4485564059489345");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"payment-info-buttons-container\"]/input")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"confirm-order-buttons-container\"]/input")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/div[2]/input")).click();
+		
+		
+		by.Payment_process(Ground, Cash_on_delivery);
+		
+		//driver.findElement(By.xpath("//input[@title = \"Continue\"]")).click();
+		//Logger.info("First Click");
+		//Thread.sleep(5000);
+		
+		
+		
+		
 		driver.findElement(By.className("ico-logout")).click();
 		
 	}

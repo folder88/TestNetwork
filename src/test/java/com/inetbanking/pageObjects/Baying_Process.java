@@ -1,5 +1,7 @@
 package com.inetbanking.pageObjects;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -67,16 +69,81 @@ public void method() {
 	
 	
 	
-	@FindBy(how = How.XPATH, using ="//*[@id=\\\"shipping-buttons-container\\\"]/input")
+	@FindBy(how = How.XPATH, using ="//*[@id=\"billing-buttons-container\"]/input")
 	@CacheLookup
-	WebElement First_Click_Continue;
+	WebElement Billing_adress_continue_button_first_click;
 	
-	@FindBy(how = How.XPATH, using ="//*[@id=\\\"shipping-method-buttons-container\\\"]/input")
+	@FindBy(how = How.XPATH, using ="//*[@id=\"shipping-buttons-container\"]/input")
 	@CacheLookup
-	WebElement Second_Click_Continue;
+	WebElement Billing_adress_continue_button_second_click; 
 	
 	
-	public void function_01(String world) {
+	@FindBy(how = How.XPATH,using="//*[@id=\"shipping-method-buttons-container\"]/input")
+	@CacheLookup
+	WebElement Shipping_method_continue_button;
+	
+	@FindBy(how=How.XPATH,using = "//*[@id=\"payment-method-buttons-container\"]/input")
+	@CacheLookup
+	WebElement Payment_method_continue_button;
+	
+	@FindBy(how=How.XPATH,using="//*[@id=\"payment-info-buttons-container\"]/input")
+	@CacheLookup
+	WebElement Payment_information_continue_button;
+	
+	@FindBy(how = How.XPATH,using="//*[@id=\"confirm-order-buttons-container\"]/input")
+	@CacheLookup
+	WebElement Confirm_order_continue_button;
+	
+	@FindBy(how = How.XPATH,using="/html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/div[2]/input")
+	@CacheLookup
+	WebElement  Last_continue_button;
+	
+	
+	
+	
+	
+	public void Payment_process(String Shipping_method,String Payment_method) throws InterruptedException {
+		
+		//Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Billing_adress_continue_button_first_click.click();
+		//Thread.sleep(2000);
+		Billing_adress_continue_button_second_click.click();
+		//Thread.sleep(2000);
+		
+		Shipping_method(Shipping_method);
+		//Thread.sleep(2000);
+		
+		Shipping_method_continue_button.click();
+		//Thread.sleep(2000);
+		Paymend_method(Payment_method);
+		//Thread.sleep(2000);
+		
+		Payment_method_continue_button.click();
+		//Thread.sleep(2000);
+		Payment_information_continue_button.click();
+		//Thread.sleep(2000);
+		Confirm_order_continue_button.click();
+		//Thread.sleep(2000);
+		Last_continue_button.click();
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void Shipping_method(String world) {
 		
 		if(world=="Ground") {
 			
@@ -95,7 +162,28 @@ public void method() {
 		
 	}
 	
-	
+	public void Paymend_method(String world) {
+		
+    if(world=="Cash_on_delivery") {
+			
+			driver.findElement(By.id(Cash_on_delivery)).click();
+			
+			
+		}
+		else if(world == "Check_Money_Order") {
+			
+			driver.findElement(By.id(Check_Money_Order)).click();
+		}
+		
+		else if (world == "Credit_Card") {
+			driver.findElement(By.id(Credit_Card)).click();
+		}
+    
+		else if (world == "Purchase_order") {
+			driver.findElement(By.id(Purchase_order)).click();
+		}
+		
+	}
 	
 	
 	
