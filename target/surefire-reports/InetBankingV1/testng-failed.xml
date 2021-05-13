@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [InetBankingV1]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="com.inetbanking.utilities.Reporting"/>
+  </listeners>
+  <test thread-count="5" name="BankingApp Test2(failed)" verbose="0">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="com.inetbanking.testCases.By_computer_test">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="folder" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- com.inetbanking.testCases.By_computer_test -->
+    </classes>
+  </test> <!-- BankingApp Test2(failed) -->
+</suite> <!-- Failed suite [InetBankingV1] -->

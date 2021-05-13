@@ -71,19 +71,10 @@ public class By_computer_test extends BaseClass{
 		driver.findElement(By.id(memory)).click();
 		
 		
-		
-		
 		driver.findElement(By.id(HardDrive)).click();
 		
-		
-		
-		
+	
 		driver.findElement(By.id("add-to-cart-button-72")).click();
-		
-		
-		
-		
-		
 		
 		
 		driver.findElement(By.className("cart-label")).click();
@@ -94,20 +85,13 @@ public class By_computer_test extends BaseClass{
 		
 		by.Payment_process(Ground, Cash_on_delivery);
 		
-		//driver.findElement(By.xpath("//input[@title = \"Continue\"]")).click();
-		//Logger.info("First Click");
-		//Thread.sleep(5000);
-		
-		
-		
 		
 		driver.findElement(By.className("ico-logout")).click();
 		
 	}
 	
 	
-	
-	
+
 	@DataProvider(name = "LoginData")
 	String[][] getData() throws IOException
 	
